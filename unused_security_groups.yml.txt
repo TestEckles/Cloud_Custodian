@@ -1,0 +1,6 @@
+policies:
+  - name: unused-security-groups
+    resource: security-group
+    filters:
+      - type: unused
+

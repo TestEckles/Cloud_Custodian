@@ -1,0 +1,14 @@
+policies:
+  - name: over-provisioned-pods
+    resource: aws.eks
+    description: "Identify over-provisioned pods for potential right-sizing"
+    filters:
+      - type: value
+        key: containers[].resources.requests.cpu
+        value: 2000m
+        op: greater-than
+      - type: value
+        key: containers[].resources.requests.memory
+        value: 4096Mi
+        op: greater-than
+

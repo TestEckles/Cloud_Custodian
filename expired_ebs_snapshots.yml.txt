@@ -1,0 +1,8 @@
+policies:
+  - name: identify-expired-ebs-snapshots
+    resource: ebs-snapshot
+    filters:
+      - type: age
+        days: 90
+        op: greater-than
+

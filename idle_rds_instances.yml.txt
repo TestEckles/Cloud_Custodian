@@ -1,0 +1,12 @@
+policies:
+  - name: idle-rds-instances
+    resource: rds
+    filters:
+      - type: metrics
+        name: CPUUtilization
+        statistics: Average
+        period: 86400
+        days: 7
+        value: 10
+        op: less-than
+

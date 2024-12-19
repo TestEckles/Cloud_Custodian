@@ -1,0 +1,7 @@
+policies:
+  - name: vpc-endpoints-unused
+    resource: aws.vpc-endpoint
+    filters:
+      - type: value
+        key: State
+        value: available

@@ -1,0 +1,15 @@
+policies:
+  - name: list-new-ec2-instances-last-3-months
+    resource: ec2
+    description: |
+      List all EC2 instances created in a specific account of type 't3.medium' or as specified within the last 3 months.
+    filters:
+      - type: value
+        key: "instanceType"
+        value: "r5.4xlarge"  # Change 't3.medium' to any specific instance type
+      - type: value
+        key: "launch_time"
+        value_type: age
+        op: less-than
+        value: 150  # Last 3 months
+

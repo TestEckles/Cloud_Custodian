@@ -1,0 +1,11 @@
+policies:
+  - name: unused-app-elbs
+    resource: app-elb
+    filters:
+      - type: metrics
+        name: RequestCount
+        statistics: Sum
+        days: 7
+        value: 0
+        op: equal
+

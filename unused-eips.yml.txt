@@ -1,0 +1,5 @@
+   policies:
+     - name: unused-eips
+       resource: aws.elastic-ip
+       filters:
+         - instance-id: absent

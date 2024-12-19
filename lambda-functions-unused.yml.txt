@@ -1,0 +1,10 @@
+policies:
+  - name: lambda-functions-unused
+    resource: aws.lambda
+    filters:
+      - type: metrics
+        name: Invocations
+        period: 86400  # 1 day in seconds
+        days: 30
+        value: 0
+        op: equal

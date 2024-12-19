@@ -1,0 +1,5 @@
+policies:
+  - name: ec2-stopped-instances
+    resource: aws.ec2
+    filters:
+      - State.Name: stopped

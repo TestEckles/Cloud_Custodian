@@ -1,0 +1,6 @@
+policies:
+  - name: detached-iam-policies
+    resource: iam-policy
+    filters:
+      - type: unused
+

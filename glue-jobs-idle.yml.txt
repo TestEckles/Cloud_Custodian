@@ -1,0 +1,9 @@
+policies:
+  - name: glue-jobs-idle
+    resource: aws.glue-job
+    filters:
+      - type: value
+        key: LastModifiedOn
+        value_type: age
+        value: 30
+        op: greater-than

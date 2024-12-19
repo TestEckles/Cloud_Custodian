@@ -1,0 +1,24 @@
+policies:
+  - name: enforce-ec2-tagging
+    resource: ec2
+    filters:
+      - "tag:ProductTower": absent
+
+policies:
+  - name: enforce-s3-tagging
+    resource: s3
+    filters:
+      - "tag:ProductTower": absent
+
+policies:
+  - name: enforce-rds-tagging
+    resource: rds
+    filters:
+      - "tag:ProductTower": absent
+
+policies:
+  - name: enforce-lambda-tagging
+    resource: aws.lambda
+    filters:
+      - "tag:ProductTower": absent
+

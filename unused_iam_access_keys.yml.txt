@@ -1,0 +1,13 @@
+policies:
+  - name: identify-unused-iam-access-keys
+    resource: iam-user
+    filters:
+      - type: access-key
+        key: Status
+        value: Active
+      - type: access-key
+        key: LastUsedDate
+        value_type: age
+        op: greater-than
+        value: 90
+

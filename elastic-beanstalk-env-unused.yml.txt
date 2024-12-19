@@ -1,0 +1,9 @@
+policies:
+  - name: elastic-beanstalk-env-unused
+    resource: aws.elasticbeanstalk-environment
+    filters:
+      - type: value
+        key: DateUpdated
+        value_type: age
+        op: greater-than
+        value: 30  # Days since last update

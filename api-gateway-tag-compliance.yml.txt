@@ -1,0 +1,8 @@
+policies:
+  - name: api-gateway-tag-compliance
+    resource: aws.rest-api
+    description: "Check all API Gateway resources for required tags"
+    filters:
+      - or:
+          - "tag:ProductTower": absent
+

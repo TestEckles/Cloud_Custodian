@@ -1,0 +1,8 @@
+policies:
+  - name: cloudwatch-log-retention
+    resource: aws.log-group
+    filters:
+      - type: value
+        key: retentionInDays
+        op: equal
+        value: 30  # Set this to the retention period you need to check

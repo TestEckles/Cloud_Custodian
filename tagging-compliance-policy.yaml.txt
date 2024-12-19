@@ -1,0 +1,10 @@
+policies:
+  - name: enforce-tag-compliance-applicationcode
+    resource: ec2
+    filters:
+      - "tag:ApplicationCode": absent
+    actions:
+      - type: tag
+        key: "ApplicationCode"
+        value: "Unknown"
+

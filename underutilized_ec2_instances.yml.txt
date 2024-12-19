@@ -1,0 +1,12 @@
+policies:
+  - name: underutilized-ec2-instances
+    resource: ec2
+    filters:
+      - type: metrics
+        name: CPUUtilization
+        statistics: Average
+        period: 86400
+        days: 14
+        value: 5
+        op: less-than
+

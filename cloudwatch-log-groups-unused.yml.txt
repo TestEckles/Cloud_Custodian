@@ -1,0 +1,6 @@
+policies:
+  - name: cloudwatch-log-groups-unused
+    resource: aws.log-group
+    filters:
+      - type: last-write
+        days: 30

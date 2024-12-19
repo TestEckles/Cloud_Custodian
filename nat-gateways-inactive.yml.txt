@@ -1,0 +1,10 @@
+policies:
+  - name: nat-gateways-inactive
+    resource: aws.nat-gateway
+    filters:
+      - type: metrics
+        name: ActiveConnectionCount
+        period: 86400  # 1 day in seconds
+        days: 30
+        value: 0
+        op: equal

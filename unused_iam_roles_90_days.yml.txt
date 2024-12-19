@@ -1,0 +1,9 @@
+policies:
+  - name: unused-iam-roles-90-days
+    resource: iam-role
+    filters:
+      - type: value
+        key: RoleLastUsed.LastUsedDate
+        value_type: age
+        op: greater-than
+        value: 90  # 90 days since last used

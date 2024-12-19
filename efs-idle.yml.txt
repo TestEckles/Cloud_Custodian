@@ -1,0 +1,10 @@
+policies:
+  - name: efs-idle
+    resource: aws.efs
+    filters:
+      - type: metrics
+        name: TotalIOBytes
+        period: 86400  # 1 day in seconds
+        days: 30
+        value: 0
+        op: equal

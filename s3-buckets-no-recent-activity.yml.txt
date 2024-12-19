@@ -1,0 +1,10 @@
+policies:
+  - name: s3-buckets-no-recent-activity
+    resource: aws.s3
+    filters:
+      - type: metrics
+        name: NumberOfObjects
+        period: 86400  # 1 day in seconds
+        days: 30
+        value: 0
+        op: equal

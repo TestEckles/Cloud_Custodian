@@ -1,0 +1,11 @@
+policies:
+  - name: ecs-clusters-unused
+    resource: aws.ecs
+    filters:
+      - type: metrics
+        name: RunningTasksCount
+        period: 86400  # 1 day in seconds
+        days: 30
+        value: 0
+        op: equal
+
